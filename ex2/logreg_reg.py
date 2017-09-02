@@ -8,7 +8,8 @@ import matplotlib.pyplot as plt
 
 # Parameters
 _lambda = 1     # The regulation parameter
-epochs = 400
+display_step = 50
+epochs = 6000
 
 # Training data
 def load_data(data_file):
@@ -39,6 +40,10 @@ def mapFeature(X):
     out = np.array(out)
     return out
 
+
+def predict(X, theta):
+    return tf.cast(tf.sigmoid(tf.matmul(X, theta)) >= 0.5, tf.float32)
+
 train_X, train_y = load_data("ex2data2.txt")
 train_X = mapFeature(train_X)
 m, n = train_X.shape    # num of training datas and features of X
@@ -49,11 +54,17 @@ X = tf.placeholder(dtype=tf.float32)
 Y = tf.placeholder(dtype=tf.float32)
 theta = tf.Variable(tf.zeros([n+1, 1]))
 h = tf.sigmoid(tf.matmul(X, theta))
+
 # Attention!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # It must be 1.0/m not 1/m!! Since m is a integer, 1/m will give us 0, then the result is zero
 cost = -(1.0/m) * (tf.matmul(tf.transpose(Y), tf.log(h)) +
                  tf.matmul(tf.transpose(tf.ones([m, 1])-Y), tf.log(tf.ones([m, 1])-h)))\
                 + (_lambda/(2*m)) * tf.reduce_sum(tf.pow(theta[1:], 2))
+
+optimizer = tf.train.GradientDescentOptimizer(0.01).minimize(cost)
+
+p = predict(X, theta)
+accuracy = tf.reduce_mean(tf.cast(tf.equal(p, Y), tf.float32))
 
 # Initialize the variable (i.e. assign their default value)
 init = tf.global_variables_initializer()
@@ -64,6 +75,13 @@ with tf.Session() as sess:
     sess.run(init)
 
     # Fit all training data:
-    print sess.run(cost, feed_dict={X: train_X, Y: train_y})
+    for epoch in range(epochs):
+        sess.run(optimizer, feed_dict={X: train_X, Y: train_y})
+
+        if (epoch+1) % display_step == 0:
+            c = sess.run(cost, feed_dict={X: train_X, Y: train_y})
+            print "Epoch:{0}\tcost={1:.9}".format(epoch+1, c)
+
+    print sess.run(accuracy, feed_dict={X: train_X, Y: train_y})
 
 
