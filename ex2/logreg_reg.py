@@ -44,7 +44,20 @@ def mapFeature(X):
 def predict(X, theta):
     return tf.cast(tf.sigmoid(tf.matmul(X, theta)) >= 0.5, tf.float32)
 
+
+def plot_data(train_X, train_y):
+    pos = np.equal(train_y, np.ones([train_y.shape[0], 1]).astype(np.float32)).astype(np.float32)
+    neg = np.equal(train_y, np.zeros([train_y.shape[0], 1]).astype(np.float32)).astype(np.float32)
+
+    plt.scatter(np.multiply(np.transpose(np.array([train_X[:, 0]])), pos),
+                np.multiply(np.transpose(np.array([train_X[:, 1]])), pos), color='red')
+    plt.scatter(np.multiply(np.transpose(np.array([train_X[:, 0]])), neg),
+                np.multiply(np.transpose(np.array([train_X[:, 1]])), neg), color='green')
+
 train_X, train_y = load_data("ex2data2.txt")
+plot_data(train_X, train_y)
+plt.show()
+
 train_X = mapFeature(train_X)
 m, n = train_X.shape    # num of training datas and features of X
 train_X = np.concatenate((np.ones([m, 1]), train_X), 1)
@@ -84,4 +97,15 @@ with tf.Session() as sess:
 
     print sess.run(accuracy, feed_dict={X: train_X, Y: train_y})
 
+    u = np.array(np.linspace(-1, 1.5))    # default to 50 steps
+    v = np.array(np.linspace(-1, 1.5))
+    z = np.zeros([50, 50])
+    for i in range(50):
+        for j in range(50):
+            tmp = np.concatenate([[[1]], mapFeature(np.array([[u[i], v[j]]]))], axis=1)
+            z[i, j] = np.matmul(tmp, sess.run(theta))
 
+    z = np.transpose(z)
+    plot_data(train_X[:, 1:], train_y)
+    plt.contour(u, v, z, [0], color='blue')
+    plt.show()
