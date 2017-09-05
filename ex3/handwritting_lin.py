@@ -4,6 +4,10 @@
     similar optimizer in TensorFlow. So the training speed is very low.
     To do a trade off I only train 1000 times.
     The final accuracy is 87.38%.
+
+    Somethings learned:
+        [1].mat file can be loaded by scipy.io
+
 """
 
 import tensorflow as tf
