@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70140672-e7b4-472c-823c-f768fe78cddb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ex3/ex3data1.mat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ex3/ex3weights.mat" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ex3/handwritting_lin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ex2/logreg_reg.py" afterPath="$PROJECT_DIR$/ex2/logreg_reg.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,26 +17,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="linreg_pro.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ex1/linreg_pro.py">
+      <file leaf-file-name="handwritting_lin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ex3/handwritting_lin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-222">
-              <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+            <state relative-caret-position="130">
+              <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
               <folding>
-                <element signature="e#454#477#0" expanded="true" />
+                <element signature="e#296#319#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logreg_reg.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="logreg_reg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ex2/logreg_reg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="108" column="27" lean-forward="false" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
-              <folding>
-                <element signature="e#61#84#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="584">
+              <caret line="95" column="33" lean-forward="false" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,6 +64,7 @@
         <option value="$PROJECT_DIR$/ex1/linreg.py" />
         <option value="$PROJECT_DIR$/ex1/linreg_pro.py" />
         <option value="$PROJECT_DIR$/ex2/logreg_reg.py" />
+        <option value="$PROJECT_DIR$/ex3/handwritting_lin.py" />
       </list>
     </option>
   </component>
@@ -89,8 +90,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -113,17 +112,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="ex3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ml_andrewNg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ml_andrewNg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="ex2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/sketch_rnn_mix/sketch_rnn_train.py" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -137,7 +152,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.logreg_reg">
+  <component name="RunManager" selected="Python.handwritting_lin">
     <configuration default="false" name="linreg" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -187,6 +202,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ml_andrewNg" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex2/logreg_reg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="handwritting_lin" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ex3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ml_andrewNg" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex3/handwritting_lin.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -272,16 +305,18 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.linreg" />
       <item index="1" class="java.lang.String" itemvalue="Python.linreg_pro" />
       <item index="2" class="java.lang.String" itemvalue="Python.logreg_reg" />
+      <item index="3" class="java.lang.String" itemvalue="Python.handwritting_lin" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.logreg_reg" />
-        <item index="1" class="java.lang.String" itemvalue="Python.linreg_pro" />
-        <item index="2" class="java.lang.String" itemvalue="Python.linreg" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.handwritting_lin" />
+        <item index="1" class="java.lang.String" itemvalue="Python.logreg_reg" />
+        <item index="2" class="java.lang.String" itemvalue="Python.linreg_pro" />
+        <item index="3" class="java.lang.String" itemvalue="Python.linreg" />
       </list>
     </recent_temporary>
   </component>
@@ -310,7 +345,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49478078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49478078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -336,9 +371,29 @@
     <entry file="file://$PROJECT_DIR$/ex1/linreg_pro.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1612">
+          <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+          <folding>
+            <element signature="e#454#477#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex2/logreg_reg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2756">
+          <caret line="108" column="27" lean-forward="false" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+          <folding>
+            <element signature="e#61#84#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex1/linreg_pro.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1612">
           <caret line="62" column="29" lean-forward="true" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
           <folding>
-            <element signature="e#454#477#0" expanded="true" />
+            <element signature="e#454#477#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -348,7 +403,7 @@
         <state relative-caret-position="1586">
           <caret line="61" column="71" lean-forward="true" selection-start-line="61" selection-start-column="71" selection-end-line="61" selection-end-column="71" />
           <folding>
-            <element signature="e#61#84#0" expanded="true" />
+            <element signature="e#61#84#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -365,7 +420,7 @@
         <state relative-caret-position="182">
           <caret line="7" column="67" lean-forward="false" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
           <folding>
-            <element signature="e#454#477#0" expanded="true" />
+            <element signature="e#454#477#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -386,20 +441,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ex1/linreg_pro.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-222">
+        <state relative-caret-position="26">
           <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
           <folding>
-            <element signature="e#454#477#0" expanded="true" />
+            <element signature="e#454#477#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ex2/logreg_reg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="108" column="27" lean-forward="false" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+        <state relative-caret-position="584">
+          <caret line="95" column="33" lean-forward="false" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex3/handwritting_lin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
           <folding>
-            <element signature="e#61#84#0" expanded="true" />
+            <element signature="e#296#319#0" expanded="true" />
           </folding>
         </state>
       </provider>
