@@ -3,9 +3,9 @@
     The neural network in ex4 is a 1-Hidden layer
 
     Somethings learned:
-        [1]. Are 'weight and bias' implementation the same as MatLab implementation ?
-        [2]. In GitHub example, cost function is a cross entropy. Any difference from the one in MatLab?
-        [3]. What is tensor layers ?
+        [1]. You can stack a matrix to a vector to vectorize the formula
+        [2]. TensorFlow index manipulation is very difficult. You'd better do the data
+            procession job in numpy.
 """
 
 import tensorflow as tf
@@ -13,10 +13,13 @@ import numpy as np
 import scipy.io as scpio
 
 # parameters
+learning_rate = 0.1
 input_layer_size = 400
 hidden_layer_size = 25
 num_labels = 10
+epoches = 500
 Lambda = 1
+display_step = 50
 
 # load training data and weights
 def load_data(data_file):
@@ -40,11 +43,10 @@ for i in range(m):
 # Graph Input
 X = tf.placeholder(dtype=tf.float32)
 Y = tf.placeholder(dtype=tf.float32)
-Theta1 = tf.Variable(tf.zeros(theta1.shape), dtype=tf.float32)
-Theta2 = tf.Variable(tf.zeros(theta2.shape), dtype=tf.float32)
+Theta1 = tf.Variable(tf.random_normal(theta1.shape), dtype=tf.float32)
+Theta2 = tf.Variable(tf.random_normal(theta2.shape), dtype=tf.float32)
 
-def nn_cost_function(Theta1, Theta2,
-                     num_labels, X, y, Lambda):
+def nn_cost_function(Theta1, Theta2, X, y, Lambda):
     """
     In MatLab:
         % compute h
@@ -84,7 +86,7 @@ def nn_cost_function(Theta1, Theta2,
     z3 = tf.matmul(a2, tf.transpose(Theta2))
     h = tf.sigmoid(z3)
 
-    y_v = tf.reshape(Y, [-1, 1])
+    y_v = tf.reshape(y, [-1, 1])
     h_ = tf.reshape(h, [-1, 1])
     theta1_sq = tf.pow(Theta1, 2)
     theta2_sq = tf.pow(Theta2, 2)
@@ -93,15 +95,37 @@ def nn_cost_function(Theta1, Theta2,
         (Lambda/(2.0*m))*(tf.reduce_sum(theta1_sq) + tf.reduce_sum(theta2_sq))
     return J
 
-cost = nn_cost_function(Theta1, Theta2, num_labels, X, Y, Lambda)
+def predict(Theta1, Theta2, X, Y):
+    z2 = tf.matmul(X, tf.transpose(Theta1))
+    a2 = tf.sigmoid(z2)
 
+    a2 = tf.concat([tf.ones([m, 1]), a2], 1)
+    z3 = tf.matmul(a2, tf.transpose(Theta2))
+    h = tf.sigmoid(z3)  # 5000 x 10
+
+    # get prediction result 5000 x 1
+    p = tf.argmax(h, axis=1) + 1
+    p = tf.cast(tf.reshape(p, [1, -1]), dtype=tf.float32)
+
+    e = tf.cast(tf.equal(tf.transpose(p), Y), dtype=tf.float32)
+    return tf.reduce_mean(e)
+
+cost = nn_cost_function(Theta1, Theta2, X, Y, Lambda)
+optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
+train_ops = optimizer.minimize(cost)
 
 init = tf.global_variables_initializer()
 with tf.Session() as sess:
     sess.run(init)
+    for i in range(epoches):
+        sess.run(train_ops, feed_dict={X: train_x, Y: train_y_pro})
 
-    print "cost: {0}".format(sess.run(cost, feed_dict={X: train_x, Y: train_y_pro,
-                                                       Theta1: theta1, Theta2: theta2}))
-    
+        if (i+1) % display_step == 0:
+            print "cost: {0}".format(sess.run(cost, feed_dict={X: train_x, Y: train_y_pro}))
+    print "optimization finish!"
+    accuracy = predict(Theta1, Theta2, X, Y)
+    print "Accuracy: {0}%".format(100 * sess.run(accuracy, feed_dict={X: train_x, Y: train_y}))
+
+
 
 
